@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(22, 35, 35, 0.781);
+}
+.grid-container {
+    height:100vh;
+    display: grid;
+    grid-template-areas: "header"
+                         "."
+                         "menu"
+                         "."
+                         "content"
+                         "."
+                         "sidebar"
+                         "."
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 5px 80px 5px 1fr 5px 80px 5px 80px;
+}
+.header { grid-area: header; background-color: #0317466c;}
+.menu {
+    grid-area: menu; 
+    background-color: #0c245d6f;
+}
+.sidebar { grid-area: sidebar; background-color: #507fa1;}
+.content { grid-area: content; background-color: rgba(66, 101, 165, 0.786);}
+.footer { grid-area: footer; background-color: #16517B;}
+h3{
+    text-align: center;
+    color: white;
+}
+.header{
+    font-size: 2em;
+    color: white;
+}
+.header h3{
+    margin-top: 25px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: [col1start] 1fr [col1end] 150px
+                           [col2start] 1fr [col2end] 150px;
+   grid-template-rows: [row1start] 1fr [row1end] 150px 
+                        [row2start] 1fr [row2end];
+}
+.main{
+    width: 300px;
+    height: 400px;
+    color: whitesmoke;
+    margin: auto;
+    text-align: center;
+    grid-column: col1start/col1end;
+    grid-row: row1start/row2end;
+}
+.question-box{
+    color: white;
+    background-color: #16517B;
+    border-radius: 25px;
+    margin: auto;
+    padding: auto;
+    height: 400px;
+    grid-column: col2start/col2end;
+    grid-row: row1start/row2end;
+}
+.question-box p{
+    margin-bottom: 20px;
+}
+
+
+/* .question-box p {
+    background-color: cadetblue;
+} */
+.question-box input {
+    border-radius: 5px;
+}
+
+.menu-list{
+    list-style: none;
+}
+.menu-list a{
+    color: white;
+    font-size: 1.1em;
+}
+.menu-list li{
+    color: white;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+
+
+
+
+@media screen and (min-width: 468px) {
+    
+    .grid-container {
+        height: 100vh;
+        display: grid;
+        grid-template-areas: "header header header header header"
+                             ". . . . ."
+                             "menu . content . sidebar"
+                             ". . . . ."
+                             "footer footer footer footer footer";
+        grid-template-columns: 130px 5px 1fr 5px 130px;
+        grid-template-rows: 90px 5px 1fr 5px 90px;
+    }
+}
